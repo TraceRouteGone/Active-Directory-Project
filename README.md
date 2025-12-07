@@ -17,40 +17,44 @@ This lab was created using VirtualBox and includes:
 
 ---
 
+### 🔧 Network Diagram  
+![Lab Diagram](screenshots/lab-diagram.png)
+
+---
+
 ## 🛠️ Tools Used
 - **Splunk Enterprise**  
 - **Splunk Universal Forwarder**  
 - **Sysmon**  
-- **Hydra** (used for RDP brute force testing — Crowbar was replaced due to compatibility issues)  
+- **Hydra** (used instead of Crowbar due to compatibility issues on modern Kali)  
 - **Atomic Red Team**  
 - **VirtualBox**
 
 ---
 
-## 📘 What I Did
+## ✅ What I Did
 - Installed and configured Active Directory  
-- Created domain users and joined a Windows 10 machine to the domain  
-- Installed Sysmon and forwarded logs to Splunk  
-- Simulated an RDP brute force attack using Hydra on Kali Linux  
-- Detected failed and successful login attempts in Splunk  
-- Used Atomic Red Team to generate attack activity and check visibility  
+- Created domain users and organizational units  
+- Joined Windows 10 to the domain  
+- Installed Sysmon and forwarded logs into Splunk  
+- Performed an RDP brute-force attack using **Hydra**  
+- Detected failed & successful login events in Splunk  
+- Installed **Atomic Red Team** to simulate attacker behaviors  
+- Verified visibility of techniques through Windows Event Logs & Splunk  
 
 ---
 
-## 🧠 What I Learned
+## 📚 What I Learned
 - How Active Directory authentication works  
-- How brute force attacks appear in Windows logs  
+- How Windows logs security-related events  
+- How RDP brute force attacks appear in Event Viewer & Splunk  
 - How to investigate Event IDs **4625** (failed logon) and **4624** (successful logon)  
-- How blue team investigation connects with attacker behavior  
+- How SIEM tools help defenders detect malicious behavior  
+- How to generate ATT&CK-mapped telemetry using Atomic Red Team  
 
 ---
 
-## Screenshots
-All screenshots for this project are available in the `/screenshots` folder of this repository.
-
----
-
-## Disclaimer
-This project was created in a safe home lab for learning purposes only.  
-Crowbar was part of the original tutorial, but Hydra was used instead due to compatibility issues on modern Kali Linux.
+## ⚠️ Disclaimer
+This project was created in a **safe, isolated home lab** for educational purposes only.  
+Brute force testing should **never** be used on systems you do not own or manage.
 
